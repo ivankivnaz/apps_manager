@@ -10,17 +10,17 @@ web_applications = [
   {
     name: 'hr',
     url: 'http://localhost:3001',
-    path: 'hr'
+    path: '/hr'
   },
   {
     name: 'budget',
     url: 'http://localhost:3002',
-    path: 'budget'
+    path: '/budget'
   },
   {
     name: 'tracking',
     url: 'http://localhost:3003',
-    path: 'tracking'
+    path: '/tracking'
   }
 ]
 

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Web Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Path</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_applications.each do |web_application| %>
+      <tr>
+        <td><%= web_application.name %></td>
+        <td><%= web_application.url %></td>
+        <td><%= web_application.path %></td>
+        <td><%= link_to 'Show', web_application %></td>
+        <td><%= link_to 'Edit', edit_web_application_path(web_application) %></td>
+        <td><%= link_to 'Destroy', web_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Web Application', new_web_application_path %>

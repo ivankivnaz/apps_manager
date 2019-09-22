@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+web_applications = [
+  {
+    name: 'hr',
+    url: 'http://localhost:3001',
+    path: 'hr'
+  },
+  {
+    name: 'budget',
+    url: 'http://localhost:3002',
+    path: 'budget'
+  },
+  {
+    name: 'tracking',
+    url: 'http://localhost:3003',
+    path: 'tracking'
+  }
+]
+
+web_applications.each do |web_app|
+  WebApplication.create(web_app)
+end

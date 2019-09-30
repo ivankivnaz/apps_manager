@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+# require 'lib/apps_proxy.rb'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,5 +16,8 @@ module AppsManager
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.paths.add File.join('app', 'lib'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'lib', '*')]
+    config.middleware.use ::AppsProxy, {ssl_verify_none: true}
   end
 end
